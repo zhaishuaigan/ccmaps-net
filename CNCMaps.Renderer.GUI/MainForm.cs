@@ -128,7 +128,7 @@ namespace CNCMaps.GUI {
 			cbTunnelPaths.Checked = Settings.Default.tunnelpaths;
 			cbTunnelPosition.Checked = Settings.Default.tunnelpos;
 
-			tbBatchInput.Lines = Settings.Default.batchinput.Split('\n');
+			// tbBatchInput.Lines = Settings.Default.batchinput.Split('\n');
 
 			ckbCheckForUpdates.Checked = !Settings.Default.skipupdatecheck;
 
@@ -184,7 +184,7 @@ namespace CNCMaps.GUI {
 			Settings.Default.tunnelpaths = cbTunnelPaths.Checked;
 			Settings.Default.tunnelpos = cbTunnelPosition.Checked;
 
-			Settings.Default.batchinput = String.Join("\n", tbBatchInput.Lines);
+			// Settings.Default.batchinput = String.Join("\n", tbBatchInput.Lines);
 
 			Settings.Default.skipupdatecheck = !ckbCheckForUpdates.Checked;
 
@@ -799,6 +799,7 @@ namespace CNCMaps.GUI {
 			return success;
 		}
 		private void AskBugReport(Exception exc) {
+			return;
 			// seems like rendering failed!
 			Log("\r\nIt appears an error occurred during image rendering.");
 			var form = new SubmitBug();
